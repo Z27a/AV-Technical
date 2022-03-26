@@ -2,10 +2,7 @@
 #include "gtest/gtest.h"
 #include <iostream>
 
-//int main() {
-//    std::cout << "Hello, World!" << std::endl;
-//    return 0;
-//}
+// I restructured the file to group parts together, hope you don't mind :)
 
 // Global variables ------------------------------------------
 const int values[] = {1, 2, 3, 4, 5};
@@ -13,7 +10,7 @@ const int NVALS = sizeof values / sizeof(int);
 
 int total = 0;
 
-// Structs and classes --------------------------------------
+// Structs, templates and classes --------------------------------------
 struct person{
     int age;
     float weight;
@@ -71,10 +68,10 @@ void fn(const int **pp) {
 }
 
 int main() {
-    // Question 2
+    // Question 2. Print x and y
     int x = 10;
     int y = 15;
-    std::cout << " " << (x, y) << std::endl;
+    std::cout << x << " " << y << std::endl;
 
     // Question 3 Get the function to run
     char* arr[] = {"ant", "bat", "cat", "dog", "egg", "fly"};
