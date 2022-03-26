@@ -21,7 +21,7 @@ struct person{
 
 template<typename T>
 struct ptr_holder {
-//    static_assert(std::is_same_v<T, std::remove_pointer<T>>, "ay what\n");
+    static_assert(!std::is_same_v<T, std::remove_pointer<T>>, "");
     T ptr;
 };
 
@@ -42,13 +42,8 @@ public:
 // Fix any compilation error
 class Foo {
 public:
-    Foo(int a, Wallet *b = NULL);
+    Foo(int a, Wallet *b = NULL) {};
 };
-
-Foo::Foo(int a, Wallet *b) {
-    a = a;
-    b = b;
-}
 
 
 // Functions ---------------------------------------------
@@ -131,7 +126,7 @@ int main() {
     ptr->weight = 55.5;
 
     // Question 10 Initialise foo
-    Foo foo (1,NULL);
+    Foo foo(0);
 
     // Question 11
     char c;
