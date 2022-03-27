@@ -71,6 +71,30 @@ void fn(const int **pp) {
     printf("%p : %p : %d", pp, *pp, **pp);
 }
 
+// Google test ---------------------------------------------
+// Question 7 Fix the compiler errors and race conditions
+// Convert the testerFunction() into a google test
+// I assume that we're checking for that waller money == 5000?
+TEST (WalletTest, BasicAssertions) {
+    Wallet walletObject;
+    std::vector<std::thread> threads;
+    for (int i = 0; i < 5; ++i) {
+        threads.push_back(std::thread(&Wallet::addMoney, &walletObject, 1000));
+    }
+    for (int i = 0; i < threads.size(); i++) {
+        threads.at(i).join();
+    }
+
+    int val = 0;
+    for (int k = 0; k < 1000; k++) {
+        val = walletObject.getMoney();
+        EXPECT_EQ(val, 5000) << "Error at count = " << k << " Money in Wallet = " << val << std::endl;
+    }
+}
+
+
+
+// Main  ---------------------------------------------
 int main() {
     // Question 2. Print x and y
     int x = 10;
@@ -106,15 +130,6 @@ int main() {
     wat.ptr = "hello";
     printf("q6: %s\n", wat.ptr);
 
-    // Question 7 Fix the compiler errors and race conditions
-    // Convert the testerFunction() into a google test
-//    int val = 0;
-//    for (int k = 0; k < 1000; k++) {
-//        if ((val = testerFunction()) != 5000) {
-//            std::cout << "Error at count = " << k << " Money in Wallet = " << val << std::endl;
-//            return 1;
-//        }
-//    }
 
     // Question 8
     int n = 1;
