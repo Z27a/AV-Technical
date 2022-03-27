@@ -3,7 +3,9 @@
 #include <iostream>
 #include <thread>
 
-// I restructured the file to group parts together, hope you don't mind
+// I restructured the file to group parts together, hope you don't mind. I also know nothing about threading :(
+// I'm part of the sims team and Cam said that we get and extension until sunday night, I assume it applies to this
+// as well?
 
 // Global variables ------------------------------------------
 const int values[] = {1, 2, 3, 4, 5};
@@ -12,7 +14,7 @@ const int NVALS = sizeof values / sizeof(int);
 int total = 0;
 
 // Structs, templates and classes --------------------------------------
-struct person{
+struct person {
     int age;
     float weight;
 };
@@ -59,7 +61,7 @@ int testerFunction() {
 }
 
 // Do not change anything besides the ptr variable
-void function(char** ptr) {
+void function(char **ptr) {
     char *ptr1;
     ptr1 = (ptr += sizeof(int))[-2];
     printf("%s\n", ptr1);
@@ -76,7 +78,7 @@ int main() {
     std::cout << x << " " << y << std::endl;
 
     // Question 3 Get the function to run. Change pointer types to make the function run
-    char* arr[] = {"ant", "bat", "cat", "dog", "egg", "fly"};
+    char *arr[] = {"ant", "bat", "cat", "dog", "egg", "fly"};
     function(arr);
 
 
@@ -100,11 +102,11 @@ int main() {
     }
 
     // Question 6 Store a char * pointer in template
-    ptr_holder <char *> wat;
+    ptr_holder<char *> wat;
     wat.ptr = "hello";
     printf("q6: %s\n", wat.ptr);
 
-//    // Question 7 Fix the compiler errors and race conditions
+    // Question 7 Fix the compiler errors and race conditions
     // Convert the testerFunction() into a google test
 //    int val = 0;
 //    for (int k = 0; k < 1000; k++) {
@@ -120,8 +122,8 @@ int main() {
     fn((const int **) &p);
 
     // Question 9
-    struct person* ptr;
-    ptr = (struct person*) malloc(sizeof(struct person));
+    struct person *ptr;
+    ptr = (struct person *) malloc(sizeof(struct person));
     ptr->age = 10;
     ptr->weight = 55.5;
 
