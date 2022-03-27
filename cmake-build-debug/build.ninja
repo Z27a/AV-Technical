@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: Google_tests
+# Project: nmp
 # Configurations: Debug
 # =============================================================================
 
@@ -40,49 +40,6 @@ include CMakeFiles\rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\
-
-#############################################
-# Utility command for list_install_components
-
-build list_install_components: phony
-
-# =============================================================================
-# Object build statements for EXECUTABLE target Google_Tests_run
-
-
-#############################################
-# Order-only phony target for Google_Tests_run
-
-build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
-
-build CMakeFiles\Google_Tests_run.dir\main.cpp.obj: CXX_COMPILER__Google_Tests_run_Debug C$:\Users\leoli\Documents\AV-Technical\main.cpp || cmake_object_order_depends_target_Google_Tests_run
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = CMakeFiles\Google_Tests_run.dir
-  OBJECT_FILE_DIR = CMakeFiles\Google_Tests_run.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Google_Tests_run.dir\
-  TARGET_PDB = Google_Tests_run.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Google_Tests_run
-
-
-#############################################
-# Link the executable Google_Tests_run.exe
-
-build Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug CMakeFiles\Google_Tests_run.dir\main.cpp.obj | lib\gtest.lib lib\gtest_main.lib lib\gtest.lib || lib\gtest.lib lib\gtest_main.lib
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = lib\gtest.lib  lib\gtest_main.lib  lib\gtest.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\Google_Tests_run.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Google_Tests_run.dir\
-  TARGET_FILE = Google_Tests_run.exe
-  TARGET_IMPLIB = Google_Tests_run.lib
-  TARGET_PDB = Google_Tests_run.pdb
-
 
 #############################################
 # Utility command for install/local
@@ -118,6 +75,44 @@ build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
 
 build edit_cache: phony CMakeFiles\edit_cache.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles\main.dir\main.cpp.obj: CXX_COMPILER__main_Debug C$:\Users\leoli\Documents\AV-Technical\main.cpp || cmake_object_order_depends_target_main
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable main.exe
+
+build main.exe main[1]_tests.cmake | ${cmake_ninja_workdir}main[1]_tests.cmake: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles\main.dir\main.cpp.obj | lib\gtest_maind.lib lib\gtestd.lib || lib\gtest_maind.lib lib\gtestd.lib
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = lib\gtest_maind.lib  lib\gtestd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\main.dir
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -D TEST_TARGET=main -D TEST_EXECUTABLE=C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/main.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=C:/Users/leoli/Documents/AV-Technical/cmake-build-debug -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=main_TESTS -D CTEST_FILE=C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/main[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P "C:/Program Files/JetBrains/CLion 2021.3.1/bin/cmake/win/share/cmake-3.21/Modules/GoogleTestAddTests.cmake""
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_FILE = main.exe
+  TARGET_IMPLIB = main.lib
+  TARGET_PDB = main.pdb
+
 
 #############################################
 # Utility command for rebuild_cache
@@ -130,6 +125,24 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for test
+
+build CMakeFiles\test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles\test.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # C:/Users/leoli/Documents/AV-Technical/CMakeLists.txt
@@ -137,96 +150,108 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 
 #############################################
+# Utility command for rebuild_cache
+
+build _deps\googletest-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\rebuild_cache: phony _deps\googletest-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for test
+
+build _deps\googletest-build\CMakeFiles\test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\test: phony _deps\googletest-build\CMakeFiles\test.util
+
+
+#############################################
 # Utility command for install/local
 
-build googletest\CMakeFiles\install\local.util: CUSTOM_COMMAND googletest\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+build _deps\googletest-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\googletest-build\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
 
-build googletest\install\local: phony googletest\CMakeFiles\install\local.util
+build _deps\googletest-build\install\local: phony _deps\googletest-build\CMakeFiles\install\local.util
 
 
 #############################################
 # Utility command for install
 
-build googletest\CMakeFiles\install.util: CUSTOM_COMMAND googletest\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
+build _deps\googletest-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\googletest-build\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
 
-build googletest\install: phony googletest\CMakeFiles\install.util
+build _deps\googletest-build\install: phony _deps\googletest-build\CMakeFiles\install.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build googletest\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build _deps\googletest-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build googletest\edit_cache: phony googletest\CMakeFiles\edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build googletest\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build googletest\rebuild_cache: phony googletest\CMakeFiles\rebuild_cache.util
+build _deps\googletest-build\edit_cache: phony _deps\googletest-build\CMakeFiles\edit_cache.util
 
 
 #############################################
 # Utility command for list_install_components
 
-build googletest\list_install_components: phony
+build _deps\googletest-build\list_install_components: phony
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/leoli/Documents/AV-Technical/googletest/CMakeLists.txt
+# C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/_deps/googletest-src/CMakeLists.txt
 # =============================================================================
 
 
 #############################################
 # Utility command for install/local
 
-build googletest\googlemock\CMakeFiles\install\local.util: CUSTOM_COMMAND googletest\googlemock\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+build _deps\googletest-build\googlemock\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\googletest-build\googlemock\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
 
-build googletest\googlemock\install\local: phony googletest\googlemock\CMakeFiles\install\local.util
+build _deps\googletest-build\googlemock\install\local: phony _deps\googletest-build\googlemock\CMakeFiles\install\local.util
 
 
 #############################################
 # Utility command for install
 
-build googletest\googlemock\CMakeFiles\install.util: CUSTOM_COMMAND googletest\googlemock\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
+build _deps\googletest-build\googlemock\CMakeFiles\install.util: CUSTOM_COMMAND _deps\googletest-build\googlemock\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
 
-build googletest\googlemock\install: phony googletest\googlemock\CMakeFiles\install.util
+build _deps\googletest-build\googlemock\install: phony _deps\googletest-build\googlemock\CMakeFiles\install.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build googletest\googlemock\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build _deps\googletest-build\googlemock\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build googletest\googlemock\edit_cache: phony googletest\googlemock\CMakeFiles\edit_cache.util
+build _deps\googletest-build\googlemock\edit_cache: phony _deps\googletest-build\googlemock\CMakeFiles\edit_cache.util
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -235,31 +260,31 @@ build googletest\googlemock\edit_cache: phony googletest\googlemock\CMakeFiles\e
 #############################################
 # Order-only phony target for gmock_main
 
-build cmake_object_order_depends_target_gmock_main: phony || googletest\googlemock\CMakeFiles\gmock_main.dir
+build cmake_object_order_depends_target_gmock_main: phony || _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
 
-build googletest\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src\gtest-all.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gmock_main
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir
-  OBJECT_FILE_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src
-  TARGET_COMPILE_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src\gtest-all.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gmock_main
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src
+  TARGET_COMPILE_PDB = bin\gmock_maind.pdb
+  TARGET_PDB = bin\gmock_maind.pdb
 
-build googletest\googlemock\CMakeFiles\gmock_main.dir\src\gmock-all.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googlemock\src\gmock-all.cc || cmake_object_order_depends_target_gmock_main
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir
-  OBJECT_FILE_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir\src
-  TARGET_COMPILE_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock-all.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\src\gmock-all.cc || cmake_object_order_depends_target_gmock_main
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src
+  TARGET_COMPILE_PDB = bin\gmock_maind.pdb
+  TARGET_PDB = bin\gmock_maind.pdb
 
-build googletest\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googlemock\src\gmock_main.cc || cmake_object_order_depends_target_gmock_main
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir
-  OBJECT_FILE_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir\src
-  TARGET_COMPILE_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj: CXX_COMPILER__gmock_main_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\src\gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src
+  TARGET_COMPILE_PDB = bin\gmock_maind.pdb
+  TARGET_PDB = bin\gmock_maind.pdb
 
 
 # =============================================================================
@@ -267,17 +292,17 @@ build googletest\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj: CXX
 
 
 #############################################
-# Link the static library lib\gmock_main.lib
+# Link the static library lib\gmock_maind.lib
 
-build lib\gmock_main.lib: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug googletest\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src\gtest-all.cc.obj googletest\googlemock\CMakeFiles\gmock_main.dir\src\gmock-all.cc.obj googletest\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1
+build lib\gmock_maind.lib: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\__\googletest\src\gtest-all.cc.obj _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock-all.cc.obj _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_FILE = lib\gmock_main.lib
-  TARGET_PDB = bin\gmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_COMPILE_PDB = bin\gmock_maind.pdb
+  TARGET_FILE = lib\gmock_maind.lib
+  TARGET_PDB = bin\gmock_maind.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock
@@ -286,23 +311,23 @@ build lib\gmock_main.lib: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug googletest
 #############################################
 # Order-only phony target for gmock
 
-build cmake_object_order_depends_target_gmock: phony || googletest\googlemock\CMakeFiles\gmock.dir
+build cmake_object_order_depends_target_gmock: phony || _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
 
-build googletest\googlemock\CMakeFiles\gmock.dir\__\googletest\src\gtest-all.cc.obj: CXX_COMPILER__gmock_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gmock
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock.dir
-  OBJECT_FILE_DIR = googletest\googlemock\CMakeFiles\gmock.dir\__\googletest\src
-  TARGET_COMPILE_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\__\googletest\src\gtest-all.cc.obj: CXX_COMPILER__gmock_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gmock
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\__\googletest\src
+  TARGET_COMPILE_PDB = bin\gmockd.pdb
+  TARGET_PDB = bin\gmockd.pdb
 
-build googletest\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj: CXX_COMPILER__gmock_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googlemock\src\gmock-all.cc || cmake_object_order_depends_target_gmock
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googlemock -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock.dir
-  OBJECT_FILE_DIR = googletest\googlemock\CMakeFiles\gmock.dir\src
-  TARGET_COMPILE_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj: CXX_COMPILER__gmock_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\src\gmock-all.cc || cmake_object_order_depends_target_gmock
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googlemock -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src
+  TARGET_COMPILE_PDB = bin\gmockd.pdb
+  TARGET_PDB = bin\gmockd.pdb
 
 
 # =============================================================================
@@ -310,46 +335,58 @@ build googletest\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj: CXX_COMPI
 
 
 #############################################
-# Link the static library lib\gmock.lib
+# Link the static library lib\gmockd.lib
 
-build lib\gmock.lib: CXX_STATIC_LIBRARY_LINKER__gmock_Debug googletest\googlemock\CMakeFiles\gmock.dir\__\googletest\src\gtest-all.cc.obj googletest\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1
+build lib\gmockd.lib: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\__\googletest\src\gtest-all.cc.obj _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86
-  OBJECT_DIR = googletest\googlemock\CMakeFiles\gmock.dir
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_FILE = lib\gmock.lib
-  TARGET_PDB = bin\gmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_COMPILE_PDB = bin\gmockd.pdb
+  TARGET_FILE = lib\gmockd.lib
+  TARGET_PDB = bin\gmockd.pdb
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build googletest\googlemock\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
+build _deps\googletest-build\googlemock\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build googletest\googlemock\rebuild_cache: phony googletest\googlemock\CMakeFiles\rebuild_cache.util
+build _deps\googletest-build\googlemock\rebuild_cache: phony _deps\googletest-build\googlemock\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for test
+
+build _deps\googletest-build\googlemock\CMakeFiles\test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googlemock && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\googlemock\test: phony _deps\googletest-build\googlemock\CMakeFiles\test.util
 
 
 #############################################
 # Utility command for list_install_components
 
-build googletest\googlemock\list_install_components: phony
+build _deps\googletest-build\googlemock\list_install_components: phony
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/leoli/Documents/AV-Technical/googletest/googlemock/CMakeLists.txt
+# C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/_deps/googletest-src/googlemock/CMakeLists.txt
 # =============================================================================
 
 
 #############################################
 # Utility command for list_install_components
 
-build googletest\googletest\list_install_components: phony
+build _deps\googletest-build\googletest\list_install_components: phony
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest
@@ -358,15 +395,15 @@ build googletest\googletest\list_install_components: phony
 #############################################
 # Order-only phony target for gtest
 
-build cmake_object_order_depends_target_gtest: phony || googletest\googletest\CMakeFiles\gtest.dir
+build cmake_object_order_depends_target_gtest: phony || _deps\googletest-build\googletest\CMakeFiles\gtest.dir
 
-build googletest\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj: CXX_COMPILER__gtest_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gtest
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googletest\CMakeFiles\gtest.dir
-  OBJECT_FILE_DIR = googletest\googletest\CMakeFiles\gtest.dir\src
-  TARGET_COMPILE_PDB = bin\gtestpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gtestpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj: CXX_COMPILER__gtest_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\src\gtest-all.cc || cmake_object_order_depends_target_gtest
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src
+  TARGET_COMPILE_PDB = bin\gtestd.pdb
+  TARGET_PDB = bin\gtestd.pdb
 
 
 # =============================================================================
@@ -374,17 +411,17 @@ build googletest\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj: CXX_COMPI
 
 
 #############################################
-# Link the static library lib\gtest.lib
+# Link the static library lib\gtestd.lib
 
-build lib\gtest.lib: CXX_STATIC_LIBRARY_LINKER__gtest_Debug googletest\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1
+build lib\gtestd.lib: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86
-  OBJECT_DIR = googletest\googletest\CMakeFiles\gtest.dir
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = bin\gtestpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_FILE = lib\gtest.lib
-  TARGET_PDB = bin\gtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_COMPILE_PDB = bin\gtestd.pdb
+  TARGET_FILE = lib\gtestd.lib
+  TARGET_PDB = bin\gtestd.pdb
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -395,13 +432,13 @@ build lib\gtest.lib: CXX_STATIC_LIBRARY_LINKER__gtest_Debug googletest\googletes
 
 build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
 
-build googletest\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj: CXX_COMPILER__gtest_main_Debug C$:\Users\leoli\Documents\AV-Technical\googletest\googletest\src\gtest_main.cc || cmake_object_order_depends_target_gtest_main
-  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -utf-8 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
-  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest\include -IC:\Users\leoli\Documents\AV-Technical\googletest\googletest
-  OBJECT_DIR = googletest\googletest\CMakeFiles\gtest_main.dir
-  OBJECT_FILE_DIR = googletest\googletest\CMakeFiles\gtest_main.dir\src
-  TARGET_COMPILE_PDB = bin\gtest_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin\gtest_mainpdb_debug_postfix-NOTFOUND.pdb
+build _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj: CXX_COMPILER__gtest_main_Debug C$:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1 -GS -W4 -WX -wd4251 -wd4275 -nologo -J -Zi -D_UNICODE -DUNICODE -DWIN32 -D_WIN32 -DSTRICT -DWIN32_LEAN_AND_MEAN -wd4702 -DGTEST_HAS_PTHREAD=0 -EHsc -D_HAS_EXCEPTIONS=1
+  INCLUDES = -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest\include -IC:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-src\googletest
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src
+  TARGET_COMPILE_PDB = bin\gtest_maind.pdb
+  TARGET_PDB = bin\gtest_maind.pdb
 
 
 # =============================================================================
@@ -409,85 +446,97 @@ build googletest\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj: CXX
 
 
 #############################################
-# Link the static library lib\gtest_main.lib
+# Link the static library lib\gtest_maind.lib
 
-build lib\gtest_main.lib: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug googletest\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj || lib\gtest.lib
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  -MTd /Zi /Ob0 /Od /RTC1
+build lib\gtest_maind.lib: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj || lib\gtestd.lib
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W4 /GR  /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:X86
-  OBJECT_DIR = googletest\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = bin\gtest_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_FILE = lib\gtest_main.lib
-  TARGET_PDB = bin\gtest_mainpdb_debug_postfix-NOTFOUND.pdb
-
-
-#############################################
-# Utility command for install/local
-
-build googletest\googletest\CMakeFiles\install\local.util: CUSTOM_COMMAND googletest\googletest\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build googletest\googletest\install\local: phony googletest\googletest\CMakeFiles\install\local.util
-
-
-#############################################
-# Utility command for install
-
-build googletest\googletest\CMakeFiles\install.util: CUSTOM_COMMAND googletest\googletest\all
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build googletest\googletest\install: phony googletest\googletest\CMakeFiles\install.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build googletest\googletest\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build googletest\googletest\edit_cache: phony googletest\googletest\CMakeFiles\edit_cache.util
+  TARGET_COMPILE_PDB = bin\gtest_maind.pdb
+  TARGET_FILE = lib\gtest_maind.lib
+  TARGET_PDB = bin\gtest_maind.pdb
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build googletest\googletest\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\googletest\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
+build _deps\googletest-build\googletest\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\leoli\Documents\AV-Technical -BC:\Users\leoli\Documents\AV-Technical\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build googletest\googletest\rebuild_cache: phony googletest\googletest\CMakeFiles\rebuild_cache.util
+build _deps\googletest-build\googletest\rebuild_cache: phony _deps\googletest-build\googletest\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for test
+
+build _deps\googletest-build\googletest\CMakeFiles\test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\googletest\test: phony _deps\googletest-build\googletest\CMakeFiles\test.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\googletest-build\googletest\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\googletest-build\googletest\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\googletest\install\local: phony _deps\googletest-build\googletest\CMakeFiles\install\local.util
+
+
+#############################################
+# Utility command for install
+
+build _deps\googletest-build\googletest\CMakeFiles\install.util: CUSTOM_COMMAND _deps\googletest-build\googletest\all
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\googletest-build\googletest\install: phony _deps\googletest-build\googletest\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\googletest-build\googletest\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\leoli\Documents\AV-Technical\cmake-build-debug\_deps\googletest-build\googletest && "C:\Program Files\JetBrains\CLion 2021.3.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\googletest-build\googletest\edit_cache: phony _deps\googletest-build\googletest\CMakeFiles\edit_cache.util
 
 # =============================================================================
 # Target aliases.
 
-build Google_Tests_run: phony Google_Tests_run.exe
+build gmock: phony lib\gmockd.lib
 
-build gmock: phony lib\gmock.lib
+build gmock_main: phony lib\gmock_maind.lib
 
-build gmock.lib: phony lib\gmock.lib
+build gmock_maind.lib: phony lib\gmock_maind.lib
 
-build gmock_main: phony lib\gmock_main.lib
+build gmockd.lib: phony lib\gmockd.lib
 
-build gmock_main.lib: phony lib\gmock_main.lib
+build gtest: phony lib\gtestd.lib
 
-build gtest: phony lib\gtest.lib
+build gtest_main: phony lib\gtest_maind.lib
 
-build gtest.lib: phony lib\gtest.lib
+build gtest_maind.lib: phony lib\gtest_maind.lib
 
-build gtest_main: phony lib\gtest_main.lib
+build gtestd.lib: phony lib\gtestd.lib
 
-build gtest_main.lib: phony lib\gtest_main.lib
+build main: phony main.exe
 
 # =============================================================================
 # Folder targets.
@@ -497,28 +546,28 @@ build gtest_main.lib: phony lib\gtest_main.lib
 #############################################
 # Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug
 
-build all: phony Google_Tests_run.exe googletest\all
+build all: phony main.exe _deps\googletest-build\all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/googletest
+# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/_deps/googletest-build
 
-build googletest\all: phony googletest\googlemock\all
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/googletest/googlemock
-
-build googletest\googlemock\all: phony lib\gmock_main.lib lib\gmock.lib googletest\googletest\all
+build _deps\googletest-build\all: phony _deps\googletest-build\googlemock\all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/googletest/googletest
+# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/_deps/googletest-build/googlemock
 
-build googletest\googletest\all: phony lib\gtest.lib lib\gtest_main.lib
+build _deps\googletest-build\googlemock\all: phony lib\gmock_maind.lib lib\gmockd.lib _deps\googletest-build\googletest\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/_deps/googletest-build/googletest
+
+build _deps\googletest-build\googletest\all: phony lib\gtestd.lib lib\gtest_maind.lib
 
 # =============================================================================
 # Built-in targets
@@ -527,14 +576,14 @@ build googletest\googletest\all: phony lib\gtest.lib lib\gtest_main.lib
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\CMakeLists.txt ..\googletest\CMakeLists.txt ..\googletest\googlemock\CMakeLists.txt ..\googletest\googlemock\cmake\gmock.pc.in ..\googletest\googlemock\cmake\gmock_main.pc.in ..\googletest\googletest\CMakeLists.txt ..\googletest\googletest\cmake\Config.cmake.in ..\googletest\googletest\cmake\gtest.pc.in ..\googletest\googletest\cmake\gtest_main.pc.in ..\googletest\googletest\cmake\internal_utils.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeDependentOption.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckIncludeFile.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckLibraryExists.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindThreads.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.21.1\CMakeCCompiler.cmake CMakeFiles\3.21.1\CMakeCXXCompiler.cmake CMakeFiles\3.21.1\CMakeRCCompiler.cmake CMakeFiles\3.21.1\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeDependentOption.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckIncludeFile.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckLibraryExists.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FetchContent.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindThreads.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GoogleTest.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.21.1\CMakeCCompiler.cmake CMakeFiles\3.21.1\CMakeCXXCompiler.cmake CMakeFiles\3.21.1\CMakeRCCompiler.cmake CMakeFiles\3.21.1\CMakeSystem.cmake _deps\googletest-src\CMakeLists.txt _deps\googletest-src\googlemock\CMakeLists.txt _deps\googletest-src\googlemock\cmake\gmock.pc.in _deps\googletest-src\googlemock\cmake\gmock_main.pc.in _deps\googletest-src\googletest\CMakeLists.txt _deps\googletest-src\googletest\cmake\Config.cmake.in _deps\googletest-src\googletest\cmake\gtest.pc.in _deps\googletest-src\googletest\cmake\gtest_main.pc.in _deps\googletest-src\googletest\cmake\internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\CMakeLists.txt ..\googletest\CMakeLists.txt ..\googletest\googlemock\CMakeLists.txt ..\googletest\googlemock\cmake\gmock.pc.in ..\googletest\googlemock\cmake\gmock_main.pc.in ..\googletest\googletest\CMakeLists.txt ..\googletest\googletest\cmake\Config.cmake.in ..\googletest\googletest\cmake\gtest.pc.in ..\googletest\googletest\cmake\gtest_main.pc.in ..\googletest\googletest\cmake\internal_utils.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeDependentOption.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckIncludeFile.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckLibraryExists.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindThreads.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.21.1\CMakeCCompiler.cmake CMakeFiles\3.21.1\CMakeCXXCompiler.cmake CMakeFiles\3.21.1\CMakeRCCompiler.cmake CMakeFiles\3.21.1\CMakeSystem.cmake: phony
+build ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeDependentOption.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckIncludeFile.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\CheckLibraryExists.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FetchContent.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FetchContent\CMakeLists.cmake.in C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPackageMessage.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindPython\Support.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\FindThreads.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GNUInstallDirs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\GoogleTest.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.1\bin\cmake\win\share\cmake-3.21\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.21.1\CMakeCCompiler.cmake CMakeFiles\3.21.1\CMakeCXXCompiler.cmake CMakeFiles\3.21.1\CMakeRCCompiler.cmake CMakeFiles\3.21.1\CMakeSystem.cmake _deps\googletest-src\CMakeLists.txt _deps\googletest-src\googlemock\CMakeLists.txt _deps\googletest-src\googlemock\cmake\gmock.pc.in _deps\googletest-src\googlemock\cmake\gmock_main.pc.in _deps\googletest-src\googletest\CMakeLists.txt _deps\googletest-src\googletest\cmake\Config.cmake.in _deps\googletest-src\googletest\cmake\gtest.pc.in _deps\googletest-src\googletest\cmake\gtest_main.pc.in _deps\googletest-src\googletest\cmake\internal_utils.cmake: phony
 
 
 #############################################

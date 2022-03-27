@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/main[1]_tests.cmake")
+  include("C:/Users/leoli/Documents/AV-Technical/cmake-build-debug/main[1]_tests.cmake")
+else()
+  add_test(main_NOT_BUILT main_NOT_BUILT)
+endif()

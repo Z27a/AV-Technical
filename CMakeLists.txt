@@ -1,19 +1,32 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.14)
 project(nmp)
 
-# 'Google_test' is the subproject name
-project(Google_tests)
-
-# 'lib' is the folder with Google Test sources
-add_subdirectory(googletest)
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
-# 'Google_Tests_run' is the target name
-# 'main.cpp' are source files with tests
-add_executable(Google_Tests_run main.cpp)
-target_link_libraries(Google_Tests_run gtest gtest_main)
-
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+    add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# GoogleTest requires at least C++11
+set(CMAKE_CXX_STANDARD 11)
+
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+add_executable(
+        main
+        main.cpp
+)
+target_link_libraries(
+        main
+        gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(main)
